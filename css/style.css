@@ -273,4 +273,119 @@ body {
 .news-ticker {
     background: var(--accent-yellow); color: #000;
     padding: 15px 0; border-top: 5px solid rgba(0,0,0,0.1);
-    font-size: 14
+    font-size: 14px; font-weight: 700;
+}
+
+.ticker-wrap { display: inline-block; white-space: nowrap; animation: ticker 45s linear infinite; }
+
+@keyframes ticker { from { transform: translateX(100%); } to { transform: translateX(-100%); } }
+
+/* --- 10. VERTICAL SECTIONS --- */
+.section-padding { padding: 120px 0; }
+.centered-header { text-align: center; margin-bottom: 80px; }
+.section-main-title { font-family: 'Orbitron', sans-serif; font-size: 45px; margin-bottom: 20px; }
+.underline-accent { width: 80px; height: 4px; background: var(--accent-yellow); margin: 0 auto; }
+
+.verticals-grid {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px;
+}
+
+.vertical-card {
+    background: var(--dark-surface); border: 1px solid var(--glass-border);
+    padding: 50px; border-radius: 35px; transition: var(--transition-smooth);
+    position: relative; overflow: hidden;
+}
+
+.vertical-card::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: radial-gradient(circle at top right, rgba(255,157,0,0.1), transparent);
+    opacity: 0; transition: var(--transition-smooth);
+}
+
+.vertical-card:hover { transform: translateY(-15px); border-color: var(--accent-yellow); }
+.vertical-card:hover::before { opacity: 1; }
+
+.v-icon { 
+    width: 80px; height: 80px; background: rgba(255,157,0,0.1); 
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 20px; font-size: 30px; color: var(--accent-yellow);
+    margin-bottom: 30px;
+}
+
+.v-list { margin-top: 30px; list-style: none; }
+.v-list li { margin-bottom: 15px; font-size: 15px; display: flex; align-items: center; gap: 12px; color: var(--text-dim); }
+.v-list i { color: var(--accent-yellow); font-size: 12px; }
+
+/* --- 11. COMPLIANCE BANNER --- */
+.compliance-banner { padding-bottom: 120px; }
+.glass-compliance {
+    background: linear-gradient(135deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
+    border: 1px solid var(--glass-border); padding: 60px; border-radius: 40px;
+    display: flex; justify-content: space-between; align-items: center;
+}
+
+.compliance-text h3 { font-family: 'Orbitron', sans-serif; font-size: 28px; margin-bottom: 15px; }
+.compliance-text p { max-width: 700px; color: var(--text-dim); }
+
+.zero-fee-badge {
+    background: var(--accent-yellow); color: #000;
+    padding: 30px; border-radius: 50%; width: 150px; height: 150px;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    font-weight: 900; text-align: center; line-height: 1;
+    transform: rotate(15deg); box-shadow: 0 20px 40px rgba(255, 180, 0, 0.3);
+}
+
+/* --- 12. CORPORATE FOOTER --- */
+.corporate-footer {
+    background: #000; border-top: 1px solid var(--glass-border);
+    padding: 100px 0 40px;
+}
+
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 80px; }
+.footer-logo { height: 50px; margin-bottom: 30px; }
+.footer-bio { color: var(--text-dim); font-size: 15px; margin-bottom: 30px; }
+
+.social-links { display: flex; gap: 20px; }
+.social-links a { 
+    width: 45px; height: 45px; background: var(--glass-bg);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 50%; color: #fff; text-decoration: none;
+    transition: var(--transition-smooth); border: 1px solid var(--glass-border);
+}
+
+.social-links a:hover { background: var(--accent-yellow); color: #000; transform: translateY(-5px); }
+
+.footer-col h4 { font-family: 'Orbitron', sans-serif; color: #fff; margin-bottom: 35px; font-size: 18px; letter-spacing: 1px; }
+.footer-ul { list-style: none; }
+.footer-ul li { margin-bottom: 15px; color: var(--text-dim); font-size: 14px; }
+
+.footer-bottom {
+    margin-top: 100px; padding-top: 30px; border-top: 1px solid var(--glass-border);
+    display: flex; justify-content: space-between; align-items: center;
+    font-size: 13px; color: var(--text-dim);
+}
+
+/* --- 13. RESPONSIVE DESIGN (MOBILE) --- */
+@media (max-width: 1200px) {
+    .mega-title { font-size: 65px; }
+    .verticals-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 992px) {
+    .hero-flex { grid-template-columns: 1fr; text-align: center; }
+    .hero-subtitle { margin: 0 auto 50px; }
+    .hero-cta-grid { justify-content: center; }
+    .brand-trust-strip { justify-content: center; flex-wrap: wrap; }
+    .visual-cards-container { display: none; }
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+    .glass-compliance { flex-direction: column; text-align: center; gap: 40px; }
+}
+
+@media (max-width: 768px) {
+    .desktop-nav { display: none; }
+    .mega-title { font-size: 45px; }
+    .verticals-grid { grid-template-columns: 1fr; }
+    .footer-grid { grid-template-columns: 1fr; text-align: center; gap: 50px; }
+    .social-links { justify-content: center; }
+    .brand-identity { flex-direction: column; gap: 10px; }
+}
