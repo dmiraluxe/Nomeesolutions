@@ -3,157 +3,151 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | DIVEXA</title>
+    <title>Contact Headquarters | DIVEXA Global Connectivity</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
-    <style>
-        /* 3D Moving Background Elements */
-        .animated-bg {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            z-index: -1;
-            overflow: hidden;
-            background: #0f0f0f;
-        }
-
-        .blob {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: linear-gradient(135deg, rgba(255, 180, 0, 0.2) 0%, rgba(255, 100, 0, 0.1) 100%);
-            filter: blur(80px);
-            border-radius: 50%;
-            animation: move 20s infinite alternate;
-        }
-
-        .blob-1 { top: -100px; right: -100px; }
-        .blob-2 { bottom: -100px; left: -100px; animation-duration: 25s; }
-
-        @keyframes move {
-            from { transform: translate(0, 0) scale(1); }
-            to { transform: translate(100px, 100px) scale(1.2); }
-        }
-
-        /* Glassmorphism Card Design */
-        .contact-wrapper {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
-            margin-top: 50px;
-            align-items: center;
-        }
-
-        .glass-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(15px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 40px;
-            border-radius: 20px;
-            box-shadow: 0 25px 45px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-10px);
-            border: 1px solid var(--accent);
-        }
-
-        .phone-link {
-            display: block;
-            font-size: 20px;
-            color: var(--accent);
-            text-decoration: none;
-            margin: 15px 0;
-            font-weight: 700;
-        }
-
-        .form-group {
-            margin-bottom: 20px;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 14px;
-            color: var(--text-gray);
-        }
-
-        .glass-input {
-            width: 100%;
-            background: rgba(255, 255, 255, 0.05) !important;
-            border: 1px solid rgba(255, 255, 255, 0.1) !important;
-            padding: 12px 15px;
-            border-radius: 8px;
-            color: #fff !important;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        .glass-input:focus {
-            border-color: var(--accent) !important;
-            background: rgba(255, 255, 255, 0.1) !important;
-        }
-
-        @media (max-width: 768px) {
-            .contact-wrapper { grid-template-columns: 1fr; }
-        }
-    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="animated-bg">
-        <div class="blob blob-1"></div>
-        <div class="blob blob-2"></div>
+
+    <div class="visual-engine">
+        <div class="gradient-sphere"></div>
+        <div class="gradient-sphere-2"></div>
+        <div class="grid-overlay"></div>
     </div>
 
-    <header>
-        <nav class="container">
-            <div class="logo"><h1>DIVEXA</h1><span>An initiative of Nomee Solutions</span></div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="careers.html">Careers</a></li>
-                <li><a href="contact.html" class="active">Contact</a></li>
-            </ul>
-        </nav>
+    <header class="main-header glass-nav">
+        <div class="container nav-container">
+            <div class="brand-identity">
+                <a href="index.html"><img src="Gemini_Generated_Image_3n8o7e3n8o7e3n8o-Photoroom.png" alt="DIVEXA" class="brand-main"></a>
+                <div class="vertical-separator"></div>
+                <div class="initiative-box">
+                    <span class="tiny-label">GLOBAL DESK</span>
+                    <img src="Gemini_Generated_Image_vb3iuhvb3iuhvb3i-Photoroom.png" alt="Nomee Solutions" class="brand-sub">
+                </div>
+            </div>
+            <nav class="desktop-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" class="nav-anchor">Home</a></li>
+                    <li><a href="services.html" class="nav-anchor">Campaigns</a></li>
+                    <li><a href="careers.html" class="nav-anchor">Hiring</a></li>
+                    <li><a href="contact.html" class="nav-anchor active">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <section class="container section-padding">
-        <div class="section-title">
-            <h2>Get In Touch</h2>
-            <p>Direct Onboarding | No Fees | Global Process</p>
-        </div>
-
-        <div class="contact-wrapper">
-            <div class="glass-card">
-                <h3>Contact HR Team</h3>
-                <p>Call us directly for immediate interview scheduling.</p>
-                <a href="tel:+918692057430" class="phone-link">📞 +91 8692057430</a>
-                <a href="tel:+918369748158" class="phone-link">📞 +91 8369748158</a>
-                <hr style="border: 0; border-top: 1px solid rgba(255,255,255,0.1); margin: 20px 0;">
-                <p style="color: #28a745; font-weight: 600;">✓ No Consultancy Charges</p>
-                <p style="color: #28a745; font-weight: 600;">✓ Direct Company Hiring</p>
-            </div>
-
-            <div class="glass-card">
-                <form action="https://formspree.io/f/mykkyood" method="POST">
-                    <div class="form-group">
-                        <label>Full Name</label>
-                        <input type="text" name="name" class="glass-input" placeholder="Enter your name" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Phone Number</label>
-                        <input type="tel" name="phone" class="glass-input" placeholder="Your mobile number" required>
-                    </div>
-                    <div class="form-group">
-                        <label>Message / Experience</label>
-                        <textarea name="message" class="glass-input" rows="4" placeholder="Tell us about yourself..." required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary" style="width: 100%; margin: 0;">Submit Application</button>
-                </form>
+    <section class="hero-arena">
+        <div class="container hero-flex">
+            <div class="hero-content-box">
+                <div class="live-tag"><span class="ping-dot"></span> 24/7 SUPPORT AVAILABLE</div>
+                <h1 class="mega-title">Get In <span class="text-gradient">Touch</span></h1>
+                <p class="hero-subtitle">Whether you are a center looking for direct buyers or a candidate seeking a global career, our response team is ready to assist you across 3 time zones.</p>
             </div>
         </div>
     </section>
+
+    <section class="container section-padding" style="margin-top: -120px;">
+        <div class="verticals-grid">
+            
+            <div class="vertical-card glass-hover">
+                <div class="v-icon"><i class="fab fa-whatsapp"></i></div>
+                <h4 style="color: var(--accent); margin-bottom: 10px;">WhatsApp India</h4>
+                <p>For Center Setup & Indian Hiring</p>
+                <div style="margin-top: 20px;">
+                    <a href="https://wa.me/918692057430" class="btn-secondary-glow" style="padding: 10px 20px; font-size: 14px;">+91 8692057430</a>
+                    <a href="https://wa.me/918369748158" class="btn-secondary-glow" style="padding: 10px 20px; font-size: 14px; margin-top: 10px;">+91 8369748158</a>
+                </div>
+            </div>
+
+            <div class="vertical-card glass-hover special-border">
+                <div class="v-icon"><i class="fas fa-globe-americas"></i></div>
+                <h4 style="color: #fff; margin-bottom: 10px;">Global Desk</h4>
+                <p>US Campaigns & Int. Hiring</p>
+                <div style="margin-top: 20px;">
+                    <p style="font-size: 14px; color: var(--text-dim); margin-bottom: 5px;">WhatsApp US:</p>
+                    <a href="https://wa.me/18194894239" class="btn-primary-3d" style="padding: 10px 20px; font-size: 14px;">+1 (819) 489-4239</a>
+                    <p style="font-size: 14px; color: var(--text-dim); margin-top: 15px; margin-bottom: 5px;">Voice Call:</p>
+                    <a href="tel:17168446627" class="btn-secondary-glow" style="padding: 10px 20px; font-size: 14px;">+1 7168446627</a>
+                </div>
+            </div>
+
+            <div class="vertical-card glass-hover">
+                <div class="v-icon"><i class="fas fa-envelope-open-text"></i></div>
+                <h4 style="color: var(--accent); margin-bottom: 10px;">Official Email</h4>
+                <p>For Proposals & Documentation</p>
+                <div style="margin-top: 20px;">
+                    <a href="mailto:info@nomeesolutions.online" class="btn-secondary-glow" style="padding: 10px 20px; font-size: 13px;">info@nomeesolutions.online</a>
+                    <p style="margin-top: 15px; font-size: 12px; color: var(--text-dim);">Website: www.nomeesolutions.online</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="section-padding" style="background: rgba(255,180,0,0.02);">
+        <div class="container">
+            <div class="centered-header">
+                <h2 class="section-main-title">Our Global Presence</h2>
+                <div class="underline-accent"></div>
+            </div>
+            
+            <div class="verticals-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                <div class="glass-morph" style="text-align: center; border-color: rgba(255,255,255,0.05);">
+                    <i class="fas fa-map-marker-alt" style="color: var(--accent);"></i>
+                    <h4>India</h4>
+                    <p>11 Satellite Centers Across Major Hubs</p>
+                </div>
+                <div class="glass-morph" style="text-align: center; border-color: rgba(255,255,255,0.05);">
+                    <i class="fas fa-building" style="color: var(--accent);"></i>
+                    <h4>Dubai</h4>
+                    <p>International Operations & Tech Support HQ</p>
+                </div>
+                <div class="glass-morph" style="text-align: center; border-color: rgba(255,255,255,0.05);">
+                    <i class="fas fa-plane" style="color: var(--accent);"></i>
+                    <h4>Bangkok</h4>
+                    <p>APAC Regional Processing & Logistics Hub</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container section-padding">
+        <div class="glass-compliance" style="display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; padding: 60px; align-items: start;">
+            <div>
+                <h2 style="font-family: 'Orbitron'; margin-bottom: 20px;">Send a <span style="color: var(--accent);">Direct Message</span></h2>
+                <p style="color: var(--text-dim); margin-bottom: 30px;">Fill out the form and our department head will reach back to you within 4 business hours.</p>
+                
+                <div class="v-list">
+                    <li><i class="fas fa-check"></i> Zero Upfront Charge Consultations</li>
+                    <li><i class="fas fa-check"></i> Direct Buyer Introductions</li>
+                    <li><i class="fas fa-check"></i> 100% Free Hiring Support</li>
+                </div>
+            </div>
+
+            <form action="#" class="contact-form-3d">
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <input type="text" placeholder="Your Name" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 8px; color: #fff;">
+                    <input type="email" placeholder="Email Address" style="background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 8px; color: #fff;">
+                </div>
+                <select style="width: 100%; margin-top: 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 8px; color: #fff;">
+                    <option value="">Select Purpose</option>
+                    <option value="setup">New Center Setup</option>
+                    <option value="campaign">Apply for Campaigns</option>
+                    <option value="hiring">Job Application</option>
+                </select>
+                <textarea placeholder="Tell us about your center or your profile..." rows="5" style="width: 100%; margin-top: 20px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); padding: 15px; border-radius: 8px; color: #fff;"></textarea>
+                <button type="submit" class="btn-primary-3d" style="width: 100%; margin-top: 20px; border: none; cursor: pointer;">Initialize Connection</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="corporate-footer">
+        <div class="container footer-bottom">
+            <p>&copy; 2026 DIVEXA | Legal & Support Powered by Nomee Solutions.</p>
+            <p>Serious Centers Only • Window Shoppers Stay Away</p>
+        </div>
+    </footer>
 
     <script src="js/main.js"></script>
 </body>
