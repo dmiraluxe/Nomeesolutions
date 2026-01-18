@@ -1,276 +1,471 @@
-/* DIVEXA GLOBAL - MASTER STYLESHEET v4.0
-   - Stable Buttons (No Shaking)
-   - Extra Large & Clear Logos
-   - Dark 3D Enterprise Theme
+/* ================================================================
+   DIVYA GLOBAL & NOMEE SOLUTIONS - MASTER STYLESHEET v7.0
+   Author: Gemini AI Thought Partner
+   Scope: Full Site Global Branding & Enterprise Forms
+   Lines: 400+ Total Coverage
+================================================================
 */
 
+/* --- 1. CORE VARIABLES & ROOT SETTINGS --- */
 :root {
     --primary-bg: #050505;
-    --accent: #ff9d00;
-    --accent-glow: rgba(255, 157, 0, 0.5);
-    --glass: rgba(255, 255, 255, 0.04);
-    --glass-border: rgba(255, 255, 255, 0.12);
+    --secondary-bg: #0a0a0a;
+    --accent: #ff9d00;          /* DIVYA Orange */
+    --accent-green: #00ff88;    /* NOMEE Green */
+    --accent-glow: rgba(255, 157, 0, 0.4);
+    --glass-bg: rgba(255, 255, 255, 0.03);
+    --glass-border: rgba(255, 255, 255, 0.1);
     --text-main: #ffffff;
-    --text-dim: #b0b0b0;
-    --nav-height: 100px; /* Increased for larger logos */
+    --text-dim: #a0a0a0;
+    --nav-height: 140px;
+    --transition-smooth: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
+/* --- 2. GLOBAL RESET & TYPOGRAPHY --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
 }
 
 body {
     background-color: var(--primary-bg);
     color: var(--text-main);
+    font-family: 'Inter', sans-serif;
     overflow-x: hidden;
-    line-height: 1.7;
+    line-height: 1.8;
 }
 
-/* --- LOGO SIZING & VISIBILITY FIX --- */
-.brand-main {
-    height: 70px !important; /* Made significantly larger */
-    width: auto;
-    filter: brightness(0) invert(1); /* Forces logo to be white on dark bg */
-    transition: transform 0.3s ease;
-    object-fit: contain;
-}
-
-.brand-sub {
-    height: 45px !important; /* Made Nomee logo larger */
-    width: auto;
-    filter: brightness(0) invert(1);
-    opacity: 0.9;
-}
-
-.footer-logo {
-    height: 60px !important;
-    filter: brightness(0) invert(1);
-    margin-bottom: 25px;
-}
-
-.brand-identity {
-    display: flex;
-    align-items: center;
-    gap: 25px;
-}
-
-/* --- VISUAL ENGINE (Background) --- */
+/* --- 3. DYNAMIC BACKGROUND ENGINE --- */
 .visual-engine {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     z-index: -1;
+    pointer-events: none;
 }
 
 .gradient-sphere {
     position: absolute;
-    width: 700px;
-    height: 700px;
+    width: 1000px;
+    height: 1000px;
     background: radial-gradient(circle, var(--accent-glow) 0%, transparent 70%);
-    top: -250px;
-    right: -100px;
-    filter: blur(100px);
+    top: -400px;
+    right: -200px;
+    filter: blur(150px);
+    animation: drift 15s infinite alternate ease-in-out;
+}
+
+@keyframes drift {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(-50px, 50px); }
 }
 
 .grid-overlay {
     position: absolute;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
-                      linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+    background-image: 
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
     background-size: 60px 60px;
 }
 
-/* --- NAVIGATION --- */
+/* --- 4. HEADER & DIVYA/NOMEE BRANDING --- */
 .main-header {
     position: fixed;
     top: 0;
     width: 100%;
     height: var(--nav-height);
-    z-index: 1000;
-    display: flex;
-    align-items: center;
-    background: rgba(5, 5, 5, 0.85);
-    backdrop-filter: blur(20px);
+    background: rgba(5, 5, 5, 0.95);
+    backdrop-filter: blur(30px);
     border-bottom: 1px solid var(--glass-border);
-}
-
-.container {
-    width: 92%;
-    max-width: 1400px;
-    margin: 0 auto;
-}
-
-.nav-container {
+    z-index: 9999;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 
+.brand-identity {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+/* Divya Logo Text */
+.divya-logo-text {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 36px;
+    font-weight: 900;
+    letter-spacing: 6px;
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+.divya-logo-text span {
+    color: var(--accent);
+    text-shadow: 0 0 20px var(--accent-glow);
+}
+
+/* Nomee Logo Highlight */
+.initiative-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-left: 2px solid var(--accent);
+    padding-left: 30px;
+}
+
+.brand-sub {
+    height: 90px !important; /* MEGA LOGO */
+    width: auto;
+    filter: brightness(0) invert(1);
+    transition: var(--transition-smooth);
+    object-fit: contain;
+}
+
+.brand-sub:hover {
+    transform: scale(1.1) translateY(-5px);
+}
+
+.tagline-pot {
+    font-family: 'Orbitron';
+    font-size: 11px;
+    letter-spacing: 3px;
+    color: var(--accent-green);
+    margin-top: 10px;
+    font-weight: 700;
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.3);
+}
+
+/* --- 5. NAVIGATION LINKS --- */
 .nav-list {
     display: flex;
+    gap: 50px;
     list-style: none;
-    gap: 40px;
 }
 
 .nav-anchor {
     text-decoration: none;
     color: var(--text-dim);
-    font-size: 15px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    transition: 0.3s;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: var(--transition-smooth);
+    position: relative;
+    padding: 10px 0;
 }
 
-.nav-anchor:hover, .nav-anchor.active {
-    color: var(--accent);
+.nav-anchor::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background: var(--accent);
+    transition: var(--transition-smooth);
 }
 
-/* --- BUTTONS (STABLE - NO SHAKING) --- */
-.btn-primary-3d {
-    padding: 18px 40px;
+.nav-anchor:hover {
+    color: white;
+}
+
+.nav-anchor:hover::before, .nav-anchor.active::before {
+    width: 100%;
+}
+
+/* --- 6. BUTTONS (STABLE & GLOWING) --- */
+.btn-submit, .btn-primary {
     background: var(--accent);
     color: #000;
-    text-decoration: none;
-    font-weight: 800;
-    border-radius: 10px;
+    border: none;
+    padding: 22px 45px;
+    border-radius: 14px;
     font-family: 'Orbitron';
-    display: inline-block;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    box-shadow: 0 5px 15px rgba(255, 157, 0, 0.3);
-}
-
-.btn-primary-3d:hover {
-    transform: translateY(-4px) !important; /* Only vertical movement */
-    box-shadow: 0 15px 30px var(--accent-glow);
-}
-
-.btn-secondary-glow {
-    padding: 18px 40px;
-    border: 1px solid var(--glass-border);
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-    border-radius: 10px;
-    display: inline-block;
-    transition: all 0.3s ease;
-}
-
-.btn-secondary-glow:hover {
-    border-color: var(--accent);
-    background: rgba(255, 157, 0, 0.05);
-}
-
-/* --- HERO SECTION --- */
-.hero-arena {
-    padding-top: 220px;
-    padding-bottom: 120px;
-}
-
-.mega-title {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 85px;
-    line-height: 1.05;
     font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    cursor: pointer;
+    transition: var(--transition-smooth);
+    box-shadow: 0 10px 20px rgba(255, 157, 0, 0.2);
+}
+
+.btn-submit:hover {
+    background: white;
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px var(--accent-glow);
+}
+
+/* --- 7. ENTERPRISE FORM STYLING --- */
+.glass-morph {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    backdrop-filter: blur(20px);
+    border-radius: 35px;
+    padding: 60px;
+}
+
+.form-group {
     margin-bottom: 30px;
 }
 
-.text-gradient {
-    background: linear-gradient(90deg, #ff9d00, #ffea00);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-}
-
-.hero-subtitle {
-    font-size: 20px;
-    color: var(--text-dim);
-    max-width: 700px;
-    margin-bottom: 50px;
-}
-
-/* --- CARDS & GRIDS --- */
-.verticals-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 40px;
-}
-
-.vertical-card {
-    background: var(--glass);
-    border: 1px solid var(--glass-border);
-    padding: 50px;
-    border-radius: 30px;
-    transition: 0.4s ease;
-}
-
-.vertical-card:hover {
-    border-color: var(--accent);
-    background: rgba(255, 255, 255, 0.06);
-    transform: translateY(-10px);
-}
-
-.v-icon {
-    font-size: 45px;
+.input-label {
+    display: block;
+    font-size: 11px;
+    font-weight: 900;
     color: var(--accent);
-    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
 }
 
-/* --- STATUS INDICATOR --- */
+.form-control-custom {
+    width: 100%;
+    background: rgba(0,0,0,0.8);
+    border: 1px solid var(--glass-border);
+    border-radius: 15px;
+    padding: 18px 25px;
+    color: white;
+    font-size: 16px;
+    transition: var(--transition-smooth);
+}
+
+.form-control-custom:focus {
+    outline: none;
+    border-color: var(--accent);
+    background: rgba(255,157,0,0.05);
+}
+
+/* Job Specific Animations */
+#job-specific-fields {
+    background: rgba(0, 255, 136, 0.05);
+    border: 1px dashed var(--accent-green);
+    padding: 40px;
+    border-radius: 25px;
+    margin: 30px 0;
+}
+
+.skill-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 20px;
+}
+
+.skill-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: var(--text-dim);
+}
+
+.skill-item input[type="checkbox"] {
+    accent-color: var(--accent-green);
+    width: 20px;
+    height: 20px;
+}
+
+/* --- 8. CONTACT SIDEBAR & CARDS --- */
+.contact-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.contact-card {
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    padding: 40px;
+    border-radius: 30px;
+    transition: var(--transition-smooth);
+}
+
+.contact-card:hover {
+    border-color: var(--accent);
+    transform: translateX(10px);
+}
+
+.info-link {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.info-link i {
+    color: var(--accent);
+    font-size: 22px;
+    width: 25px;
+    text-align: center;
+}
+
+.social-row {
+    display: flex;
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.social-row a {
+    font-size: 28px;
+    color: white;
+    transition: var(--transition-smooth);
+}
+
+.social-row a:hover {
+    color: var(--accent);
+    transform: scale(1.3);
+}
+
+/* --- 9. CONTENT SECTIONS --- */
+.hero-arena {
+    padding-top: 250px;
+    padding-bottom: 150px;
+}
+
+.mega-title {
+    font-family: 'Orbitron';
+    font-size: 85px;
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 40px;
+}
+
+.impact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 50px;
+    margin-top: 100px;
+}
+
+.impact-box {
+    padding: 50px;
+    background: var(--secondary-bg);
+    border-radius: 30px;
+    border: 1px solid var(--glass-border);
+    position: relative;
+    overflow: hidden;
+}
+
+.impact-box::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--accent);
+}
+
+/* --- 10. STATUS & PING --- */
 .live-tag {
-    background: rgba(255, 255, 255, 0.05);
-    padding: 8px 20px;
-    border-radius: 50px;
     display: inline-flex;
     align-items: center;
+    gap: 15px;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid var(--accent-green);
+    padding: 12px 30px;
+    border-radius: 100px;
+    color: var(--accent-green);
     font-size: 12px;
-    font-weight: 800;
-    border: 1px solid var(--glass-border);
-    margin-bottom: 20px;
+    font-weight: 900;
+    letter-spacing: 2px;
 }
 
 .ping-dot {
-    height: 10px;
-    width: 10px;
-    background: #00ff44;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-green);
     border-radius: 50%;
-    margin-right: 12px;
-    box-shadow: 0 0 10px #00ff44;
+    box-shadow: 0 0 15px var(--accent-green);
     animation: pulse 2s infinite;
 }
 
 @keyframes pulse {
-    0% { opacity: 1; }
-    50% { opacity: 0.3; }
-    100% { opacity: 1; }
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.5); opacity: 0.4; }
+    100% { transform: scale(1); opacity: 1; }
 }
 
-/* --- FOOTER --- */
-.corporate-footer {
-    padding: 100px 0 40px;
+/* --- 11. CORPORATE FOOTER --- */
+.main-footer {
     background: #000;
+    padding: 120px 0 60px;
     border-top: 1px solid var(--glass-border);
 }
 
+.footer-logo-text {
+    font-family: 'Orbitron';
+    font-size: 32px;
+    font-weight: 900;
+    color: white;
+    margin-bottom: 30px;
+    display: block;
+}
+
+.footer-logo-text span { color: var(--accent); }
+
 .footer-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
     gap: 60px;
 }
 
-/* --- RESPONSIVE --- */
-@media (max-width: 1024px) {
+.footer-col h5 {
+    font-family: 'Orbitron';
+    color: var(--accent);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.footer-col ul { list-style: none; }
+.footer-col li { margin-bottom: 15px; }
+.footer-col a {
+    color: var(--text-dim);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+}
+
+.footer-col a:hover { color: white; padding-left: 10px; }
+
+/* --- 12. RESPONSIVE DESIGN (MOBILE FIXES) --- */
+@media (max-width: 1200px) {
     .mega-title { font-size: 60px; }
-    .verticals-grid { grid-template-columns: 1fr 1fr; }
+    .brand-identity { gap: 20px; }
+    .nav-list { gap: 25px; }
+}
+
+@media (max-width: 992px) {
+    .nav-container { flex-direction: column; height: auto; padding: 20px 0; }
+    .main-header { height: auto; position: relative; }
+    .hero-arena { padding-top: 100px; }
+    .brand-identity { flex-direction: column; text-align: center; }
+    .initiative-box { border-left: none; border-top: 2px solid var(--accent); padding: 20px 0 0 0; }
+    .vertical-grid { grid-template-columns: 1fr !important; }
 }
 
 @media (max-width: 768px) {
     .mega-title { font-size: 45px; }
-    .brand-main { height: 50px !important; }
-    .verticals-grid { grid-template-columns: 1fr; }
-    .nav-list { display: none; }
+    .glass-morph { padding: 30px; }
+    .brand-sub { height: 60px !important; }
+    .divya-logo-text { font-size: 24px; }
 }
+
+/* --- 13. EXTRA UTILITIES --- */
+.text-gradient {
+    background: linear-gradient(90deg, var(--accent), #fff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.mt-50 { margin-top: 50px; }
+.mb-50 { margin-bottom: 50px; }
+
+/* End of Master CSS */
