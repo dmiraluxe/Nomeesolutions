@@ -3,104 +3,317 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Partner With Us | DIVEXA Global Inquiry</title>
+    <title>Partner With Us | Nomee Solutions Global</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --accent: #00ff88; 
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-dim: #b0b0b0;
+        }
+
+        body {
+            background: #0a0a0a;
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* Branding Section */
+        .main-header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--glass-border);
+            padding: 20px 0;
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .brand-identity {
+            display: flex;
+            align-items: center;
+            gap: 25px;
+        }
+
+        .nomee-main-logo {
+            height: 90px !important; /* Extra Large */
+            filter: brightness(0) invert(1);
+            transition: 0.3s;
+        }
+
+        .initiative-box {
+            border-left: 2px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .tagline-pot {
+            font-family: 'Orbitron';
+            font-size: 12px;
+            letter-spacing: 2px;
+            color: var(--accent);
+            display: block;
+            margin-top: 5px;
+        }
+
+        /* Form Styling */
+        .hero-arena { padding-top: 180px; padding-bottom: 80px; }
+        
+        .glass-morph {
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 1px solid var(--glass-border);
+            border-radius: 20px;
+            padding: 40px;
+        }
+
+        .form-control-custom {
+            width: 100%;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid var(--glass-border);
+            color: white;
+            border-radius: 10px;
+            font-family: 'Inter';
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+
+        .form-control-custom:focus {
+            border-color: var(--accent);
+            outline: none;
+        }
+
+        #job-specific-fields {
+            display: none; /* Hidden by default */
+            flex-direction: column;
+            gap: 15px;
+            padding: 20px;
+            background: rgba(0, 255, 136, 0.05);
+            border-radius: 15px;
+            margin-bottom: 20px;
+            animation: slideDown 0.4s ease-out;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .skill-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 10px;
+            margin: 10px 0;
+        }
+
+        .skill-item {
+            font-size: 13px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--text-dim);
+        }
+
+        .skill-item input { accent-color: var(--accent); }
+
+        .btn-submit {
+            width: 100%;
+            padding: 18px;
+            background: var(--accent);
+            color: #000;
+            border: none;
+            border-radius: 10px;
+            font-family: 'Orbitron';
+            font-weight: 900;
+            cursor: pointer;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            box-shadow: 0 0 25px rgba(0, 255, 136, 0.5);
+            transform: translateY(-3px);
+        }
+
+        /* Contact Sidebar */
+        .contact-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            padding: 25px;
+            border-radius: 20px;
+            margin-bottom: 20px;
+        }
+
+        .contact-card h4 {
+            font-family: 'Orbitron';
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 15px;
+            color: var(--text-dim);
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .contact-item:hover { color: var(--accent); }
+        .contact-item i { width: 20px; color: var(--accent); }
+
+        .social-icons {
+            display: flex;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            font-size: 24px;
+            color: white;
+            transition: 0.3s;
+        }
+
+        .social-icons a:hover { color: var(--accent); transform: scale(1.2); }
+
+        @media (max-width: 992px) {
+            .verticals-grid { grid-template-columns: 1fr !important; }
+            .brand-identity { flex-direction: column; align-items: flex-start; }
+            .initiative-box { border-left: none; border-top: 2px solid var(--accent); padding: 10px 0 0 0; }
+        }
+    </style>
 </head>
 <body>
 
-    <div class="visual-engine">
-        <div class="gradient-sphere"></div>
-        <div class="grid-overlay"></div>
-    </div>
-
-    <header class="main-header glass-nav" style="height: 130px;"> <div class="container nav-container">
+    <header class="main-header"> 
+        <div class="nav-container">
             <div class="brand-identity">
                 <a href="index.html">
-                    <img src="logo.png" alt="DIVEXA" style="height: 85px !important; filter: brightness(0) invert(1);">
+                    <img src="logo.png" alt="DIVEXA" style="height: 60px; filter: brightness(0) invert(1);">
                 </a>
-                <div class="vertical-separator"></div>
                 <div class="initiative-box">
-                    <span class="tiny-label" style="color: var(--accent); font-size: 10px;">POWERED BY</span>
-                    <img src="nomee.png" alt="Nomee Solutions" style="height: 55px !important; filter: brightness(0) invert(1);">
+                    <img src="nomee.png" alt="Nomee Solutions" class="nomee-main-logo">
+                    <span class="tagline-pot">REALIZE YOUR POTENTIAL</span>
                 </div>
             </div>
-            <nav class="desktop-nav">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="nav-anchor">Home</a></li>
-                    <li><a href="services.html" class="nav-anchor">Campaigns</a></li>
-                    <li><a href="careers.html" class="nav-anchor">Hiring</a></li>
-                    <li><a href="contact.html" class="nav-anchor active">Partner</a></li>
-                </ul>
-            </nav>
         </div>
     </header>
 
-    <section class="hero-arena" style="padding-top: 240px;">
-        <div class="container">
-            <div class="centered-header" style="text-align: left; margin-bottom: 50px;">
-                <div class="live-tag"><span class="ping-dot"></span> 24/7 SUPPORT AVAILABLE</div>
-                <h1 class="mega-title">Get In <span class="text-gradient">Touch</span></h1>
-                <p class="hero-subtitle">Whether you are a center looking for direct buyers or a candidate seeking a global career, our response team is ready to assist you across 3 time zones.</p>
-            </div>
-
-            <div class="verticals-grid" style="grid-template-columns: 1.5fr 1fr; gap: 60px; align-items: start;">
+    <section class="hero-arena">
+        <div class="container" style="max-width: 1200px; margin: 0 auto; padding: 0 20px;">
+            <div class="verticals-grid" style="display: grid; grid-template-columns: 1.6fr 1fr; gap: 40px; align-items: start;">
                 
-                <div class="glass-morph" style="padding: 50px;">
-                    <h3 style="margin-bottom: 30px; font-family: 'Orbitron'; color: var(--accent);">Initialize Connection</h3>
-                    <form action="https://formspree.io/f/mykkyood" method="POST" style="display: flex; flex-direction: column; gap: 20px;">
+                <div class="glass-morph">
+                    <h2 style="font-family: 'Orbitron'; margin-bottom: 30px; letter-spacing: 1px;">Initialize <span style="color: var(--accent);">Connection</span></h2>
+                    
+                    <form action="https://formspree.io/f/mykkyood" method="POST">
                         
-                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
-                            <div class="input-group">
-                                <label style="font-size: 12px; color: var(--text-dim); display: block; margin-bottom: 8px;">FULL NAME</label>
-                                <input type="text" name="name" required style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; border-radius: 8px;">
-                            </div>
-                            <div class="input-group">
-                                <label style="font-size: 12px; color: var(--text-dim); display: block; margin-bottom: 8px;">EMAIL ADDRESS</label>
-                                <input type="email" name="email" required style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; border-radius: 8px;">
-                            </div>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <input type="text" name="Full Name" placeholder="Your Name" required class="form-control-custom">
+                            <input type="email" name="Email" placeholder="Email Address" required class="form-control-custom">
                         </div>
 
-                        <div class="input-group">
-                            <label style="font-size: 12px; color: var(--text-dim); display: block; margin-bottom: 8px;">INQUIRY TYPE</label>
-                            <select name="type" style="width: 100%; padding: 15px; background: rgba(5,5,5,0.9); border: 1px solid var(--glass-border); color: white; border-radius: 8px;">
-                                <option value="Campaign Partnership">B2B Campaign Partnership</option>
-                                <option value="Global Hiring">Global Hiring (Dubai/Bangkok)</option>
-                                <option value="Legal NOC">Legal NOC & Center Setup</option>
-                                <option value="Other">Other Inquiry</option>
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                            <input type="tel" name="Phone" placeholder="Phone Number" required class="form-control-custom">
+                            <input type="tel" name="WhatsApp" placeholder="WhatsApp Number" required class="form-control-custom">
+                        </div>
+
+                        <select name="Inquiry Type" id="formTrigger" class="form-control-custom" required>
+                            <option value="" disabled selected>Select Purpose</option>
+                            <option value="Partnership">B2B Campaign Partnership</option>
+                            <option value="Global Hiring">Apply for Job (Global Hiring)</option>
+                            <option value="NOC Support">Legal NOC & Center Setup</option>
+                        </select>
+
+                        <div id="job-specific-fields">
+                            <input type="text" name="Current City" placeholder="Current Location (City/State)" class="form-control-custom">
+                            
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <select name="Experience" class="form-control-custom">
+                                    <option value="Fresher">Fresher</option>
+                                    <option value="1-3 Years">1-3 Years</option>
+                                    <option value="3+ Years">3+ Years</option>
+                                </select>
+                                <select name="Relocation" class="form-control-custom">
+                                    <option value="Ready to Relocate">Ready to Relocate: Yes</option>
+                                    <option value="Not Ready">Ready to Relocate: No</option>
+                                </select>
+                            </div>
+
+                            <label style="font-size: 12px; color: var(--accent); font-weight: 800;">PROCESS SPECIALIZATION:</label>
+                            <div class="skill-grid">
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="Domestic"> Domestic Calls</label>
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="International"> Int. Voice</label>
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="Closer"> Dialer/Closer</label>
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="OTC"> OTC Process</label>
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="Tech Support"> Tech Support</label>
+                                <label class="skill-item"><input type="checkbox" name="Specialization" value="BSOD"> BSOD Specialist</label>
+                            </div>
+
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+                                <input type="text" name="Current Salary" placeholder="Current Salary" class="form-control-custom">
+                                <input type="text" name="Expected Salary" placeholder="Expected Salary" class="form-control-custom">
+                            </div>
+
+                            <select name="Notice Period" class="form-control-custom">
+                                <option value="Immediate">Join Immediately</option>
+                                <option value="7 Days">Within 7 Days</option>
+                                <option value="15 Days">Within 15 Days</option>
                             </select>
                         </div>
 
-                        <div class="input-group">
-                            <label style="font-size: 12px; color: var(--text-dim); display: block; margin-bottom: 8px;">MESSAGE</label>
-                            <textarea name="message" rows="5" required style="width: 100%; padding: 15px; background: rgba(255,255,255,0.05); border: 1px solid var(--glass-border); color: white; border-radius: 8px; resize: none;"></textarea>
-                        </div>
-
-                        <button type="submit" class="btn-primary-3d" style="width: 100%; cursor: pointer; border: none;">SUBMIT INQUIRY</button>
+                        <textarea name="Additional Info" placeholder="Tell us more about your requirement..." rows="4" class="form-control-custom" style="resize: none;"></textarea>
+                        
+                        <button type="submit" class="btn-submit">Submit Application</button>
                     </form>
                 </div>
 
-                <div class="contact-details-box">
-                    <div class="glass-morph" style="margin-bottom: 30px;">
-                        <h4 style="color: var(--accent); margin-bottom: 15px;"><i class="fas fa-headset"></i> Quick Connect</h4>
-                        <p style="font-size: 14px; margin-bottom: 10px;">WhatsApp Ops: <br><strong>+91 8692057430</strong></p>
-                        <p style="font-size: 14px;">Direct Email: <br><strong>info@nomeesolutions.online</strong></p>
+                <div class="contact-sidebar">
+                    <div class="contact-card">
+                        <h4>Direct Support</h4>
+                        <a href="https://wa.me/918692057430" class="contact-item">
+                            <i class="fab fa-whatsapp"></i> <span>HR Divya: +91 8692057430</span>
+                        </a>
+                        <a href="tel:+918369748158" class="contact-item">
+                            <i class="fas fa-phone-alt"></i> <span>Support: +91 8369748158</span>
+                        </a>
+                        <a href="tel:+18194894239" class="contact-item">
+                            <i class="fas fa-globe-americas"></i> <span>International: +1 (819) 489-4239</span>
+                        </a>
+                        <a href="mailto:nomeesolutions@gmail.com" class="contact-item">
+                            <i class="fas fa-envelope"></i> <span>nomeesolutions@gmail.com</span>
+                        </a>
                     </div>
 
-                    <div class="glass-morph" style="margin-bottom: 30px;">
-                        <h4 style="color: var(--accent); margin-bottom: 15px;"><i class="fas fa-map-marker-alt"></i> Regional HQs</h4>
-                        <ul style="list-style: none; font-size: 14px; color: var(--text-dim); line-height: 2;">
-                            <li><i class="fas fa-circle" style="font-size: 6px; color: var(--accent);"></i> Dubai, UAE (Global Business)</li>
-                            <li><i class="fas fa-circle" style="font-size: 6px; color: var(--accent);"></i> Bangkok, Thailand (Operations)</li>
-                            <li><i class="fas fa-circle" style="font-size: 6px; color: var(--accent);"></i> Mumbai, India (Talent Desk)</li>
-                        </ul>
+                    <div class="contact-card">
+                        <h4>Social Presence</h4>
+                        <p style="font-size: 13px; color: var(--text-dim);">Follow us for daily campaign updates and urgent hiring news.</p>
+                        <div class="social-icons">
+                            <a href="https://www.facebook.com/share/14Tk12L7za7/" target="_blank"><i class="fab fa-facebook"></i></a>
+                            <a href="https://www.instagram.com/nomeesolutions.online?igsh=MTd0d2RvbThibWYzZQ==" target="_blank"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
                     </div>
 
-                    <div class="glass-morph" style="background: rgba(255, 157, 0, 0.05);">
-                        <p style="font-size: 12px; color: var(--text-dim); font-style: italic;">
-                            Note: We typically respond to new B2B inquiries within 4-6 business hours. Please ensure your contact details are accurate.
-                        </p>
+                    <div style="padding: 20px; text-align: center;">
+                        <p style="font-size: 11px; color: var(--text-dim);">&copy; 2026 Nomee Solutions | Powered by DIVEXA Global</p>
                     </div>
                 </div>
 
@@ -108,26 +321,18 @@
         </div>
     </section>
 
-    <footer class="corporate-footer" style="margin-top: 100px;">
-        <div class="container footer-grid">
-            <div class="footer-col-main">
-                <img src="logo.png" alt="DIVEXA" style="height: 60px; filter: brightness(0) invert(1);">
-                <p>Leading the next generation of BPO excellence and strategic talent acquisition through innovation and trust.</p>
-            </div>
-            <div class="footer-col">
-                <h4>Legal</h4>
-                <ul class="footer-ul">
-                    <li>Privacy Policy</li>
-                    <li>Terms of Service</li>
-                    <li>NOC Documents</li>
-                </ul>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 DIVEXA | Powered by Nomee Solutions.</p>
-        </div>
-    </footer>
+    <script>
+        // Form Logic to show/hide fields
+        const selectTrigger = document.getElementById('formTrigger');
+        const jobFields = document.getElementById('job-specific-fields');
 
-    <script src="js/main.js"></script>
+        selectTrigger.addEventListener('change', function() {
+            if (this.value === 'Global Hiring') {
+                jobFields.style.display = 'flex';
+            } else {
+                jobFields.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>
